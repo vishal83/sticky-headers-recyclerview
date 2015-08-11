@@ -56,7 +56,7 @@ public class StickyRecyclerHeadersDecoration extends RecyclerView.ItemDecoration
   @Override
   public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
     super.getItemOffsets(outRect, view, parent, state);
-    int itemPosition = parent.getChildAdapterPosition(view);
+    int itemPosition = parent.getChildPosition(view);
     if (itemPosition == RecyclerView.NO_POSITION) {
         return;
     }
@@ -93,7 +93,7 @@ public class StickyRecyclerHeadersDecoration extends RecyclerView.ItemDecoration
 
     for (int i = 0; i < parent.getChildCount(); i++) {
       View itemView = parent.getChildAt(i);
-      int position = parent.getChildAdapterPosition(itemView);
+      int position = parent.getChildPosition(itemView);
       if (position == RecyclerView.NO_POSITION) {
           continue;
       }
